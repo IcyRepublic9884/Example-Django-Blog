@@ -2,9 +2,18 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'pages/index.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'pages/bootstrap.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'pages/bootstrap.js' %}">
     <title>{{ title }}</title>
   </head>
-  <body>
-    <h1>Welcome to the Django Made Home Page Of the Web Application</h1>
-  </body>
+    <body>
+      <div class="container">
+        <div class="jumbotron">
+          <h2>Welcome to the Django Blog</h2>
+          <p>Join us today !</p>
+        </div>
+      </div>
+    </body>
 </html>
