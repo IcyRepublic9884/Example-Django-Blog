@@ -1,21 +1,22 @@
 {% extends 'pages/base.html' %}
 
 {% block header %}
-  <h1>Welcome to the Public Post Service made with Django</h1>
-  <h5>Anyone can <i>post</i>, <i>publish</i> or <i>disscuss</i> topics with each other while beign totally anonymouse.</h5>
+<h1>Welcome to the Public Post Service made with Django</h1>
+<h5>Anyone can <i>post</i>, <i>publish</i> or <i>disscuss</i> topics with each other while beign totally anonymouse.
+</h5>
 {% endblock %}
 
 {% block content %}
 </div>
-  {% if posts %}
-    {% for post in posts %}
-      <div class="post">
-        <h3>{{ post.title }}</h3>
-        <small>by {{ post.author }} on {{ post.date_posted }}</small>
-        <p>{{ post.content }}</p>
-      </div>
-      <hr></hr>
-    {% endfor %}
-  {% endif %}
+{% if posts %}
+{% for post in posts %}
+<div class="post">
+  <h3>{{ post.title }}</h3>
+  <small>by {{ post.author }} on {{ post.date_posted }}</small>
+  <p>{{ post.content }}</p>
+</div>
+<hr>
+{% endfor %}
+{% endif %}
 </div>
 {% endblock %}
