@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 from .models import Post
-from .forms import CreatePostForm
+from .forms import PostForm, CreatePostForm
 
 def index(request, *args, **kwargs):
     posts = Post.objects.all()
@@ -22,6 +22,8 @@ def create_post(request, *args, **kwargs):
     if request.method == 'POST':
         form = CreatePostForm(request.POST)
         if form.is_valid():
+            print("***************************POST VALIDATED AND CREATED")
+            print(dir(form))
             return render(request, 'pages/thanks.html', {})
     else:
         form = CreatePostForm()

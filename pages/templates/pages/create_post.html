@@ -3,7 +3,7 @@
 <h2>Create A new Post</h2>
 {% endblock %}
 {% block content %}
-<form action="/your-name/" method="post">
+<form action="/create_post/" method="post">
     {% csrf_token %}
     {{ form }}
     <input type="submit" value="Submit">
