@@ -1,10 +1,11 @@
 from django.shortcuts import render
 
 from .models import Post
-from .forms import PostForm, CreatePostForm
+from .forms import PostForm
 
 def index(request, *args, **kwargs):
     posts = Post.objects.all()
+    posts = posts[::-1]  # Reverse the Posts so the newest come first
     return render(request, 'pages/index.html', {'title': 'Django-Blog', 'posts': posts})
 
 def about(request, *args, **kwargs):
@@ -17,14 +18,13 @@ def contact(request, *args, **kwargs):
 
 def create_post(request, *args, **kwargs):
     # For the user to make a new post
-    # TODO: add the advanced form for this
-    # TODO: attach this form to the Django model
+    # TODO: Use django-crispy-forms
     if request.method == 'POST':
-        form = CreatePostForm(request.POST)
+        # If the User has filled the form, and clicked submit
+        form = PostForm(request.POST)
         if form.is_valid():
-            print("***************************POST VALIDATED AND CREATED")
-            print(dir(form))
+            form.save()
             return render(request, 'pages/thanks.html', {})
     else:
-        form = CreatePostForm()
+        form = PostForm()
     return render(request, 'pages/create_post.html', {'form': form})
