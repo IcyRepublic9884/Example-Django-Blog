@@ -1,0 +1,12 @@
+{% extends 'pages/base.html' %}
+{% block header %}
+<h2>Create A new Post</h2>
+{% endblock %}
+{% block content %}
+<form action="/create_post/" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <br>
+    <input type="submit" class="btn btn-primary btn-lg" value="Submit">
+</form>
+{% endblock %}
