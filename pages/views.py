@@ -4,9 +4,8 @@ from .models import Post
 from .forms import PostForm
 
 def index(request, *args, **kwargs):
-    posts = Post.objects.all()
-    posts = posts[::-1]  # Reverse the Posts so the newest come first
-    return render(request, 'pages/index.html', {'title': 'Django-Blog', 'posts': posts})
+    # posts = Post.objects.all()
+    return render(request, 'pages/index.html', {'title': 'Django-Blog', 'posts': None})
 
 def about(request, *args, **kwargs):
     # Render the about page
