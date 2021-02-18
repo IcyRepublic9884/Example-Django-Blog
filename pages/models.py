@@ -5,3 +5,6 @@ class Post(models.Model):
     title = models.CharField(max_length=80)
     date_posted = models.DateField(auto_now=True)
     content = models.TextField()
+
+    def __str__(self):
+        return self.title
