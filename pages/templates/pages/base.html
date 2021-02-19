@@ -31,7 +31,7 @@
             <a class="nav-link" href="{% url 'pages-contact-page' %}">Contact</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'pages-create_post-page' %}">Create A Post</a>
+            <a class="nav-link" href="{% url 'users-register-page' %}">Register</a>
           </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
@@ -43,7 +43,7 @@
     <br>
     {% if messages %}
       {% for message in messages %}
-        <div class="alert altert-{{ message.tags }}">
+        <div class="alert alert-{{ message.tags }}">
           {{ message }}
         </div>
       {% endfor %}
