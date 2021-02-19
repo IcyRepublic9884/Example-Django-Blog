@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" dir="ltr">
 
 <head>
@@ -11,6 +11,7 @@
 
 <body>
   <div class="container">
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <a class="navbar-brand" href="{% url 'pages-index-page' %}">Django Blog</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -26,7 +27,6 @@
           <li class="nav-item">
             <a class="nav-link" href="{% url 'pages-about-page' %}">About</a>
           </li>
-          </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'pages-contact-page' %}">Contact</a>
           </li>
@@ -41,10 +41,12 @@
       </div>
     </nav>
     <br>
+    <!-- Header -->
     <div class="jumbotron">
       {% block header %}
       {% endblock %}
     </div>
+    <!-- Main page content -->
     <div class="container">
       {% block content %}
       {% endblock %}
