@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from pages.views import index, contact, about, create_post
+from users.views import register
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -23,4 +24,5 @@ urlpatterns = [
     path('about/', about, name='pages-about-page'),
     path('contact/', contact, name='pages-contact-page'),
     path('create_post/', create_post, name='pages-create_post-page'),
+    path('register/', register, name='users-register-page'),
 ]
