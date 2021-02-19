@@ -1,12 +1,9 @@
 {% extends 'pages/base.html' %}
 {% block content %}
-
-<div>
-    <form action="/register/", method="POST">
-        {% csrf_token %}
-        {{ form }}
-        <input type="submit" class="btn btn-primary btn-lg" value="Sign Up">
-    </form>
-</div>
-
+<form action="/register/", method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <br>
+    <input type="submit" class="btn btn-primary btn-lg" value="Sign Up">
+</form>
 {% endblock %}
