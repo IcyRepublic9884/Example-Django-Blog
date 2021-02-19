@@ -1,8 +1,9 @@
 {% extends 'pages/base.html' %}
 {% block content %}
+{% load crispy_forms_tags %}
 <form action="/register/", method="POST">
     {% csrf_token %}
-    {{ form.as_p }}
+    {{ form|crispy }}
     <br>
     <input type="submit" class="btn btn-primary btn-lg" value="Sign Up">
 </form>
