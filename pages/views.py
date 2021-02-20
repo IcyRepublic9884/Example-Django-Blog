@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
 
 from .models import Post
 from .forms import PostForm
@@ -17,6 +18,7 @@ def contact(request, *args, **kwargs):
     """Render the contact page"""
     return render(request, 'pages/contact.html', {})
 
+@login_required
 def create_post(request, *args, **kwargs):
     """For the user to make a new post"""
     if request.method == 'POST':
