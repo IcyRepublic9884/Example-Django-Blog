@@ -15,6 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.contrib.auth import views as auth_views
+
 from pages.views import index, contact, about, create_post
 from users.views import register
 
@@ -25,4 +27,6 @@ urlpatterns = [
     path('contact/', contact, name='pages-contact-page'),
     path('create_post/', create_post, name='pages-create_post-page'),
     path('register/', register, name='users-register-page'),
+    path('login/', auth_views.LoginView.as_view(template_name='users/login.html'), name='users-login-page'),
+    path('logout/', auth_views.LogoutView.as_view(template_name='users/logout.html'), name='users-logout-page'),
 ]

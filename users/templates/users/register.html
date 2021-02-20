@@ -1,5 +1,5 @@
 {% extends 'pages/base.html' %}
-{% block content %}
+{% block header %}
 {% load crispy_forms_tags %}
 <form action="/register/", method="POST">
     {% csrf_token %}
