@@ -4,7 +4,6 @@ from django.contrib.auth.decorators import login_required
 
 from .forms import UserRegisterForm
 
-# Create your views here.
 def register(request, *args, **kwargs):
     """Register the user"""
     if request.method == 'POST':
